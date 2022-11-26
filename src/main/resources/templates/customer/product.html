@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{/customer/layout :: dynamic(~{::main})}">
+
+<body>
+    <main>
+		<section class="bread-crumb">
+			<span class="crumb-border"></span>
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 a-left">
+						<ul class="breadcrumb">
+							<li class="home">
+								<a href="https://template-digiworld.mysapo.net/"><span>Trang chủ</span></a>
+								<span><i class="fa fa-angle-double-right" aria-hidden="true"></i></span>
+							</li>
+	
+	
+							<li><strong><span> Tất cả sản phẩm</span></strong></li>
+	
+	
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+	
+		<div class="container">
+			<div class="row row-noGutter-2">
+				<section class="main_container collection margin-bottom-30 col-lg-12">
+					<div class="text-sm-left">
+						<h1 class="title-head margin-top-0">Tất cả sản phẩm</h1>
+					</div>
+					<aside class="sidebar left-content row-filter">
+	
+						<div class="aside-filter filter-content clearfix">
+							<div class="filter-container">
+								<div class="filter-container__selected-filter" style="display: none;">
+									<div class="filter-container__selected-filter-header clearfix">
+										<span class="filter-container__selected-filter-header-title"><i
+												class="fa fa-arrow-left hidden-sm-up"></i> Bạn chọn</span>
+										<a href="javascript:void(0)" onclick="clearAllFiltered()"
+											class="filter-container__clear-all">Bỏ hết <i class="fa fa-angle-right"></i></a>
+									</div>
+									<div class="filter-container__selected-filter-list">
+										<ul></ul>
+									</div>
+								</div>
+							</div>
+							<aside class="aside-item category aside_gridlist">
+								<div class="sortPagiBar">
+									<div class="srt">
+										<div class="wr_sort">
+											<div class="text-sm-right">
+												<div class="view-mode">
+													<a href="javascript:;" data-view="grid"
+														onclick="" style="margin-right: 3px;">
+														<b class="btn button-view-mode view-mode-grid active ">
+															<i class="fa fa-th"></i>
+														</b>
+														<span>Lưới</span>
+													</a>
+													<a href="javascript:;" data-view="list"
+														onclick="">
+														<b class="btn button-view-mode view-mode-list ">
+															<i class="fa fa-bars"></i>
+														</b>
+														<span>Danh sách</span>
+													</a>
+	
+												</div>
+	
+											</div>
+										</div>
+									</div>
+								</div>
+							</aside>
+	
+							<span class="aside-item aside_boloc">Bộ lọc:</span>
+	
+							<aside class="aside-item filter-price">
+								<div class="aside-title">
+									<h2 class="title-head margin-top-0"><span>Giá sản phẩm</span></h2>
+								</div>
+								<div class="aside-content filter-group">
+									<ul>
+	
+	
+	
+	
+	
+										<li class="filter-item filter-item--check-box filter-item--green">
+											<span>
+												<label for="filter-duoi-100-000d">
+													<input type="checkbox" id="filter-duoi-100-000d"
+														onchange="toggleFilter(this);" data-group="Khoảng giá"
+														data-field="price_min" data-text="Dưới 100.000đ"
+														value="(&lt;100000)" data-operator="OR">
+													<i class="fa"></i>
+													Giá dưới 100.000đ
+												</label>
+											</span>
+										</li>
+	
+	
+	
+	
+	
+	
+										<li class="filter-item filter-item--check-box filter-item--green">
+											<span>
+												<label for="filter-100-000d-200-000d">
+													<input type="checkbox" id="filter-100-000d-200-000d"
+														onchange="toggleFilter(this)" data-group="Khoảng giá"
+														data-field="price_min" data-text="100.000đ - 200.000đ"
+														value="(&gt;=100000 AND &lt;200000)" data-operator="OR">
+													<i class="fa"></i>
+													100.000đ - 200.000đ
+												</label>
+											</span>
+										</li>
+	
+	
+	
+	
+	
+	
+										<li class="filter-item filter-item--check-box filter-item--green">
+											<span>
+												<label for="filter-200-000d-300-000d">
+													<input type="checkbox" id="filter-200-000d-300-000d"
+														onchange="toggleFilter(this)" data-group="Khoảng giá"
+														data-field="price_min" data-text="200.000đ - 300.000đ"
+														value="(&gt;=200000 AND &lt;300000)" data-operator="OR">
+													<i class="fa"></i>
+													200.000đ - 300.000đ
+												</label>
+											</span>
+										</li>
+	
+	
+	
+	
+	
+	
+										<li class="filter-item filter-item--check-box filter-item--green">
+											<span>
+												<label for="filter-300-000d-500-000d">
+													<input type="checkbox" id="filter-300-000d-500-000d"
+														onchange="toggleFilter(this)" data-group="Khoảng giá"
+														data-field="price_min" data-text="300.000đ - 500.000đ"
+														value="(&gt;=300000 AND &lt;500000)" data-operator="OR">
+													<i class="fa"></i>
+													300.000đ - 500.000đ
+												</label>
+											</span>
+										</li>
+	
+	
+	
+	
+	
+	
+										<li class="filter-item filter-item--check-box filter-item--green">
+											<span>
+												<label for="filter-500-000d-1-000-000d">
+													<input type="checkbox" id="filter-500-000d-1-000-000d"
+														onchange="toggleFilter(this)" data-group="Khoảng giá"
+														data-field="price_min" data-text="500.000đ - 1.000.000đ"
+														value="(&gt;500000 AND &lt;1000000)" data-operator="OR">
+													<i class="fa"></i>
+													500.000đ - 1.000.000đ
+												</label>
+											</span>
+										</li>
+										<li class="filter-item filter-item--check-box filter-item--green">
+											<span>
+												<label for="filter-tren1-000-000d">
+													<input type="checkbox" id="filter-tren1-000-000d"
+														onchange="toggleFilter(this)" data-group="Khoảng giá"
+														data-field="price_min" data-text="Trên 1.000.000đ"
+														value="(&gt;1000000)" data-operator="OR">
+													<i class="fa"></i>
+													Giá trên 1.000.000đ
+												</label>
+											</span>
+										</li>
+	
+	
+	
+									</ul>
+								</div>
+							</aside>
+	
+	
+	
+	
+	
+							<aside class="aside-item filter-vendor">
+								<div class="aside-title">
+									<h2 class="title-head margin-top-0"><span>Thương hiệu</span></h2>
+								</div>
+	
+								<div class="aside-content filter-group aside_vendor">
+									<ul>
+	
+	
+										<li class="filter-item filter-item--check-box filter-item--green ">
+											<span>
+												<label class="label_relative" for="filter-aukey">
+													<input type="checkbox" id="filter-aukey" onchange="toggleFilter(this)"
+														data-group="Hãng" data-field="vendor" data-text="Aukey"
+														value="(Aukey)" data-operator="OR">
+													<i class="fa"></i>
+													<span class="filter_tt">Aukey</span>
+												</label>
+											</span>
+										</li>
+	
+	
+	
+										<li class="filter-item filter-item--check-box filter-item--green ">
+											<span>
+												<label class="label_relative" for="filter-awei">
+													<input type="checkbox" id="filter-awei" onchange="toggleFilter(this)"
+														data-group="Hãng" data-field="vendor" data-text="Awei"
+														value="(Awei)" data-operator="OR">
+													<i class="fa"></i>
+													<span class="filter_tt">Awei</span>
+												</label>
+											</span>
+										</li>
+	
+	
+	
+										<li class="filter-item filter-item--check-box filter-item--green ">
+											<span>
+												<label class="label_relative" for="filter-belkin">
+													<input type="checkbox" id="filter-belkin" onchange="toggleFilter(this)"
+														data-group="Hãng" data-field="vendor" data-text="Belkin"
+														value="(Belkin)" data-operator="OR">
+													<i class="fa"></i>
+													<span class="filter_tt">Belkin</span>
+												</label>
+											</span>
+										</li>
+	
+	
+	
+										<li class="filter-item filter-item--check-box filter-item--green ">
+											<span>
+												<label class="label_relative" for="filter-hola">
+													<input type="checkbox" id="filter-hola" onchange="toggleFilter(this)"
+														data-group="Hãng" data-field="vendor" data-text="Hola"
+														value="(Hola)" data-operator="OR">
+													<i class="fa"></i>
+													<span class="filter_tt">Hola</span>
+												</label>
+											</span>
+										</li>
+	
+	
+	
+										<li class="filter-item filter-item--check-box filter-item--green ">
+											<span>
+												<label class="label_relative" for="filter-iphone">
+													<input type="checkbox" id="filter-iphone" onchange="toggleFilter(this)"
+														data-group="Hãng" data-field="vendor" data-text="Iphone"
+														value="(Iphone)" data-operator="OR">
+													<i class="fa"></i>
+													<span class="filter_tt">Iphone</span>
+												</label>
+											</span>
+										</li>
+	
+	
+	
+										<li class="filter-item filter-item--check-box filter-item--green ">
+											<span>
+												<label class="label_relative" for="filter-jelly">
+													<input type="checkbox" id="filter-jelly" onchange="toggleFilter(this)"
+														data-group="Hãng" data-field="vendor" data-text="Jelly"
+														value="(Jelly)" data-operator="OR">
+													<i class="fa"></i>
+													<span class="filter_tt">Jelly</span>
+												</label>
+											</span>
+										</li>
+	
+	
+	
+										<li class="filter-item filter-item--check-box filter-item--green ">
+											<span>
+												<label class="label_relative" for="filter-meephone">
+													<input type="checkbox" id="filter-meephone"
+														onchange="toggleFilter(this)" data-group="Hãng" data-field="vendor"
+														data-text="Meephone" value="(Meephone)" data-operator="OR">
+													<i class="fa"></i>
+													<span class="filter_tt">Meephone</span>
+												</label>
+											</span>
+										</li>
+	
+	
+	
+										<li class="filter-item filter-item--check-box filter-item--green ">
+											<span>
+												<label class="label_relative" for="filter-orion">
+													<input type="checkbox" id="filter-orion" onchange="toggleFilter(this)"
+														data-group="Hãng" data-field="vendor" data-text="Orion"
+														value="(Orion)" data-operator="OR">
+													<i class="fa"></i>
+													<span class="filter_tt">Orion</span>
+												</label>
+											</span>
+										</li>
+	
+	
+	
+										<li class="filter-item filter-item--check-box filter-item--green ">
+											<span>
+												<label class="label_relative" for="filter-osmia">
+													<input type="checkbox" id="filter-osmia" onchange="toggleFilter(this)"
+														data-group="Hãng" data-field="vendor" data-text="Osmia"
+														value="(Osmia)" data-operator="OR">
+													<i class="fa"></i>
+													<span class="filter_tt">Osmia</span>
+												</label>
+											</span>
+										</li>
+	
+	
+	
+										<li class="filter-item filter-item--check-box filter-item--green ">
+											<span>
+												<label class="label_relative" for="filter-samsung">
+													<input type="checkbox" id="filter-samsung" onchange="toggleFilter(this)"
+														data-group="Hãng" data-field="vendor" data-text="Samsung"
+														value="(Samsung)" data-operator="OR">
+													<i class="fa"></i>
+													<span class="filter_tt">Samsung</span>
+												</label>
+											</span>
+										</li>
+	
+	
+	
+										<li class="filter-item filter-item--check-box filter-item--green ">
+											<span>
+												<label class="label_relative" for="filter-sandisk">
+													<input type="checkbox" id="filter-sandisk" onchange="toggleFilter(this)"
+														data-group="Hãng" data-field="vendor" data-text="Sandisk"
+														value="(Sandisk)" data-operator="OR">
+													<i class="fa"></i>
+													<span class="filter_tt">Sandisk</span>
+												</label>
+											</span>
+										</li>
+	
+	
+	
+										<li class="filter-item filter-item--check-box filter-item--green ">
+											<span>
+												<label class="label_relative" for="filter-segsi">
+													<input type="checkbox" id="filter-segsi" onchange="toggleFilter(this)"
+														data-group="Hãng" data-field="vendor" data-text="Segsi"
+														value="(Segsi)" data-operator="OR">
+													<i class="fa"></i>
+													<span class="filter_tt">Segsi</span>
+												</label>
+											</span>
+										</li>
+	
+	
+	
+										<li class="filter-item filter-item--check-box filter-item--green ">
+											<span>
+												<label class="label_relative" for="filter-xiaomi">
+													<input type="checkbox" id="filter-xiaomi" onchange="toggleFilter(this)"
+														data-group="Hãng" data-field="vendor" data-text="Xiaomi"
+														value="(Xiaomi)" data-operator="OR">
+													<i class="fa"></i>
+													<span class="filter_tt">Xiaomi</span>
+												</label>
+											</span>
+										</li>
+	
+	
+									</ul>
+								</div>
+	
+							</aside>
+	
+	
+	
+	
+	
+							<aside class="aside-item filter-tag-style-1">
+								<div class="aside-title">
+									<h2 class="title-head margin-top-0"><span>Màu sắc</span></h2>
+								</div>
+								<div class="aside-content filter-group">
+									<ul>
+	
+	
+	
+	
+										<li class="filter-item filter-item--check-box filter-item--green">
+											<span>
+												<label for="filter-vang">
+													<input type="checkbox" id="filter-vang" onchange="toggleFilter(this)"
+														data-group="tag1" data-field="tags" data-text="Vàng" value="(Vàng)"
+														data-operator="OR">
+													<i class="fa"></i>
+													Vàng
+												</label>
+											</span>
+										</li>
+	
+	
+	
+										<li class="filter-item filter-item--check-box filter-item--green">
+											<span>
+												<label for="filter-tim">
+													<input type="checkbox" id="filter-tim" onchange="toggleFilter(this)"
+														data-group="tag1" data-field="tags" data-text="Tím" value="(Tím)"
+														data-operator="OR">
+													<i class="fa"></i>
+													Tím
+												</label>
+											</span>
+										</li>
+	
+	
+	
+										<li class="filter-item filter-item--check-box filter-item--green">
+											<span>
+												<label for="filter-do">
+													<input type="checkbox" id="filter-do" onchange="toggleFilter(this)"
+														data-group="tag1" data-field="tags" data-text="Đỏ" value="(Đỏ)"
+														data-operator="OR">
+													<i class="fa"></i>
+													Đỏ
+												</label>
+											</span>
+										</li>
+	
+	
+	
+										<li class="filter-item filter-item--check-box filter-item--green">
+											<span>
+												<label for="filter-xanh">
+													<input type="checkbox" id="filter-xanh" onchange="toggleFilter(this)"
+														data-group="tag1" data-field="tags" data-text="Xanh" value="(Xanh)"
+														data-operator="OR">
+													<i class="fa"></i>
+													Xanh
+												</label>
+											</span>
+										</li>
+	
+	
+	
+										<li class="filter-item filter-item--check-box filter-item--green">
+											<span>
+												<label for="filter-hong">
+													<input type="checkbox" id="filter-hong" onchange="toggleFilter(this)"
+														data-group="tag1" data-field="tags" data-text="Hồng" value="(Hồng)"
+														data-operator="OR">
+													<i class="fa"></i>
+													Hồng
+												</label>
+											</span>
+										</li>
+	
+	
+	
+										<li class="filter-item filter-item--check-box filter-item--green">
+											<span>
+												<label for="filter-cam">
+													<input type="checkbox" id="filter-cam" onchange="toggleFilter(this)"
+														data-group="tag1" data-field="tags" data-text="Cam" value="(Cam)"
+														data-operator="OR">
+													<i class="fa"></i>
+													Cam
+												</label>
+											</span>
+										</li>
+	
+									</ul>
+								</div>
+							</aside>
+	
+	
+							<aside class="aside-item filter-price filter-btn aside_timkiem">
+								<button class="btn btn-primary filter-action">Lọc sản phẩm</button>
+							</aside>
+							<aside class="aside-item category aside_sapxep">
+								<div id="sort-by" class="sorby_xxx">
+									<label class="left hidden-xs hidden-sm hidden-md">Sắp xếp theo: </label>
+									<ul>
+										<li><span>Thứ tự</span>
+											<ul>
+												<li><a href="javascript:;" onclick="">Mặc định</a>
+												</li>
+												<li><a href="javascript:;" onclick="">A → Z</a>
+												</li>
+												<li><a href="javascript:;" onclick="">Z → A</a>
+												</li>
+												<li><a href="javascript:;" onclick="">Giá tăng
+														dần</a></li>
+												<li><a href="javascript:;" onclick="">Giá giảm
+														dần</a></li>
+												<li><a href="javascript:;" onclick="">Hàng mới
+														nhất</a></li>
+												<li><a href="javascript:;" onclick="">Hàng cũ
+														nhất</a></li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</aside>
+						</div>
+	
+					</aside>
+					<div class="category-products products">
+
+						<section class="products-view products-view-grid collection_reponsive">
+							<div class="row row-noGutter-2 content_col" >
+								<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 col-lg-fix-5" th:each="p: ${data}">
+									<div class="product-col">
+										<div class="product-box-h">
+											<div class="row">
+												<div class="col-sm-12 col-md-12 col-lg-12">
+													<div class="product-thumbnail">
+	
+														<a class="image_link display_flex"
+															href="https://template-digiworld.mysapo.net/op-lung-iphone-6-6s-memo-totem"
+															title="${p.product.product_name}">
+															<img class="lazyload loaded"
+																th:src="@{|/customerAssets/images/${p.thumnail}|}"
+																data-src="//bizweb.dktcdn.net/thumb/medium/100/289/371/products/08-dbdfc9aa-fe11-45bc-ace0-c2c8cb80b32f.jpg?v=1516612166043"
+																alt="Ốp lưng iPhone 6/6S Memo Totem"
+																data-was-processed="true">
+														</a>
+														<a title="Xem nhanh"
+															th:href="@{|/product/productDetail/index/${p.product.id}|}"
+															data-handle="op-lung-iphone-6-6s-memo-totem"
+															class="xem_nhanh button_wh_40 btn_view right-to quick-view hidden-xs hidden-sm hidden-md">
+															Xem nhanh
+														</a>
+													</div>
+												</div>
+												<div class="col-sm-12 col-md-12 col-lg-12">
+													<div class="product-info a-left">
+	
+														<h3 class="product-name"><a class="height_name"
+																href="https://template-digiworld.mysapo.net/op-lung-iphone-6-6s-memo-totem"
+																th:text="${p.product.name}"
+																title="Ốp lưng iPhone 6/6S Memo Totem"></a></h3>
+														<div class="product-hides">
+															<div class="bizweb-product-reviews-badge" data-id="9721688">
+															</div>
+															<div class="product-hide">
+																<div class="price-box clearfix">
+																	<div class="special-price">
+																		<span class="price product-price">250.000₫</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="product-action clearfix hidden-xs">
+															<form action=""
+																method="post" class="variants form-nut-grid"
+																data-id="product-actions-9721688"
+																enctype="multipart/form-data">
+																<div>
+	
+																	<input type="hidden" name="variantId" value="15526574">
+																	<a	
+																		class="btn-buy btn-cart btn btn-circle left-to add_to_cart "
+																		title="Thêm vào giỏ hàng">
+																		Đặt mua ngay
+																	</a>
+																</div>
+															</form>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="text-center">
+	
+								<nav class="clearfix">
+									<ul class="pagination clearfix">
+										<li class="page-item hidden-xs"><a class="page-link page-db" 
+												th:href="@{|/product/index2|}">Đầu tiên</a></li>
+										<li class="page-item" ><a class="page-link" style="background-color: lightskyblue"
+												th:href="@{|/product/index2?page=${data.number}|}" th:text="${data.number+1}"></a></li>
+										<li class="page-item"><a class="page-link" 
+												th:href="@{|/product/index2?page=${data.number+1}|}" th:text="${data.number+2}"></a></li>
+										<li class="page-item"><a class="page-link" 
+												th:href="@{|/product/index2?page=${data.number+2}|}" th:text="${data.number+3}"></a></li>
+										<li class="page-item hidden-xs"><a class="page-link page-db" 
+												th:href="@{|/product/index2?page=${ data.totalPages - 1}|}">Trang cuối</a></li>
+									</ul>
+								</nav>
+							</div>
+						</section>
+					</div>
+				</section>
+	
+			</div>
+		</div>
+	
+		<div class="ajax-load">
+			<span class="loading-icon">
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+					y="0px" width="24px" height="30px" viewBox="0 0 24 30" style="enable-background:new 0 0 50 50;"
+					xml:space="preserve">
+					<rect x="0" y="10" width="4" height="10" fill="#333" opacity="0.2">
+						<animate attributeName="opacity" attributeType="XML" values="0.2; 1; .2" begin="0s" dur="0.6s"
+							repeatCount="indefinite"></animate>
+						<animate attributeName="height" attributeType="XML" values="10; 20; 10" begin="0s" dur="0.6s"
+							repeatCount="indefinite"></animate>
+						<animate attributeName="y" attributeType="XML" values="10; 5; 10" begin="0s" dur="0.6s"
+							repeatCount="indefinite"></animate>
+					</rect>
+					<rect x="8" y="10" width="4" height="10" fill="#333" opacity="0.2">
+						<animate attributeName="opacity" attributeType="XML" values="0.2; 1; .2" begin="0.15s" dur="0.6s"
+							repeatCount="indefinite"></animate>
+						<animate attributeName="height" attributeType="XML" values="10; 20; 10" begin="0.15s" dur="0.6s"
+							repeatCount="indefinite"></animate>
+						<animate attributeName="y" attributeType="XML" values="10; 5; 10" begin="0.15s" dur="0.6s"
+							repeatCount="indefinite"></animate>
+					</rect>
+					<rect x="16" y="10" width="4" height="10" fill="#333" opacity="0.2">
+						<animate attributeName="opacity" attributeType="XML" values="0.2; 1; .2" begin="0.3s" dur="0.6s"
+							repeatCount="indefinite"></animate>
+						<animate attributeName="height" attributeType="XML" values="10; 20; 10" begin="0.3s" dur="0.6s"
+							repeatCount="indefinite"></animate>
+						<animate attributeName="y" attributeType="XML" values="10; 5; 10" begin="0.3s" dur="0.6s"
+							repeatCount="indefinite"></animate>
+					</rect>
+				</svg>
+			</span>
+		</div>
+	
+		<div class="loading awe-popup">
+			<div class="overlay"></div>
+			<div class="loader" title="2">
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+					y="0px" width="24px" height="30px" viewBox="0 0 24 30" style="enable-background:new 0 0 50 50;"
+					xml:space="preserve">
+					<rect x="0" y="10" width="4" height="10" fill="#333" opacity="0.2">
+						<animate attributeName="opacity" attributeType="XML" values="0.2; 1; .2" begin="0s" dur="0.6s"
+							repeatCount="indefinite"></animate>
+						<animate attributeName="height" attributeType="XML" values="10; 20; 10" begin="0s" dur="0.6s"
+							repeatCount="indefinite"></animate>
+						<animate attributeName="y" attributeType="XML" values="10; 5; 10" begin="0s" dur="0.6s"
+							repeatCount="indefinite"></animate>
+					</rect>
+					<rect x="8" y="10" width="4" height="10" fill="#333" opacity="0.2">
+						<animate attributeName="opacity" attributeType="XML" values="0.2; 1; .2" begin="0.15s" dur="0.6s"
+							repeatCount="indefinite"></animate>
+						<animate attributeName="height" attributeType="XML" values="10; 20; 10" begin="0.15s" dur="0.6s"
+							repeatCount="indefinite"></animate>
+						<animate attributeName="y" attributeType="XML" values="10; 5; 10" begin="0.15s" dur="0.6s"
+							repeatCount="indefinite"></animate>
+					</rect>
+					<rect x="16" y="10" width="4" height="10" fill="#333" opacity="0.2">
+						<animate attributeName="opacity" attributeType="XML" values="0.2; 1; .2" begin="0.3s" dur="0.6s"
+							repeatCount="indefinite"></animate>
+						<animate attributeName="height" attributeType="XML" values="10; 20; 10" begin="0.3s" dur="0.6s"
+							repeatCount="indefinite"></animate>
+						<animate attributeName="y" attributeType="XML" values="10; 5; 10" begin="0.3s" dur="0.6s"
+							repeatCount="indefinite"></animate>
+					</rect>
+				</svg>
+			</div>
+	
+		</div>
+	
+		<div class="addcart-popup product-popup awe-popup">
+			<div class="overlay no-background"></div>
+			<div class="content">
+				<div class="row row-noGutter">
+					<div class="col-xl-6 col-xs-12">
+						<div class="btn btn-full btn-primary a-left popup-title"><i class="fa fa-check"></i>Thêm vào giỏ
+							hàng thành công
+						</div>
+						<a href="javascript:void(0)" class="close-window close-popup"><i class="fa fa-close"></i></a>
+						<div class="info clearfix">
+							<div class="product-image margin-top-5">
+								<img alt="popup" src="./images/logo.png"
+									style="max-width:150px; height:auto">
+							</div>
+							<div class="product-info">
+								<p class="product-name"></p>
+								<p class="quantity color-main"><span>Số lượng: </span></p>
+								<p class="total-money color-main"><span>Tổng tiền: </span></p>
+	
+							</div>
+							<div class="actions">
+								<button class="btn  btn-primary  margin-top-5 btn-continue">Tiếp tục mua hàng</button>
+								<button class="btn btn-gray margin-top-5" >Kiểm tra
+									giỏ hàng</button>
+							</div>
+						</div>
+	
+					</div>
+				</div>
+	
+			</div>
+		</div>
+		<div class="error-popup awe-popup">
+			<div class="overlay no-background"></div>
+			<div class="popup-inner content">
+				<div class="error-message"></div>
+			</div>
+		</div>
+	
+		<div id="popup-cart" class="modal fade" role="dialog">
+			<div id="popup-cart-desktop" class="clearfix">
+				<div class="title-popup-cart">
+					<img src="./images/icon-check.png" alt="Digiworld"> <span
+						class="your_product">Bạn đã thêm <span class="cart_name_style">[ <span
+								class="cart-popup-name"></span>]</span> vào giỏ hàng thành công ! </span>
+				</div>
+				<div class="wrap_popup">
+					<div class="title-quantity-popup">
+						<span class="cart_status" onclick="">Giỏ hàng của bạn có <span
+								class="cart-popup-count">0</span> sản phẩm </span> <i class="fa fa-caret-right"
+							aria-hidden="true"></i>
+					</div>
+					<div class="content-popup-cart">
+						<div class="thead-popup">
+							<div style="width: 53%;" class="text-left">Sản phẩm</div>
+							<div style="width: 15%;" class="text-center">Đơn giá</div>
+							<div style="width: 15%;" class="text-center">Số lượng</div>
+							<div style="width: 17%;" class="text-center">Thành tiền</div>
+						</div>
+						<div class="tbody-popup scrollbar-dynamic"></div>
+						<div class="tfoot-popup">
+							<div class="tfoot-popup-1 a-right clearfix">
+								<span class="total-p popup-total">Tổng tiền thanh toán: <span
+										class="total-price">0₫</span></span>
+							</div>
+							<div class="tfoot-popup-2 clearfix">
+								<a class="button buy_ btn-proceed-checkout" title="Tiếp tục mua hàng"
+									><span><span>Tiếp tục mua
+											hàng</span></span></a>
+								<a class="button checkout_ btn-proceed-checkout" title="Thực hiện thanh toán"
+									href="https://template-digiworld.mysapo.net/checkout"><span>Thực hiện thanh
+										toán</span></a>
+	
+							</div>
+						</div>
+					</div>
+					<a title="Close" class="quickview-close close-window" href="javascript:;"
+						><i class="fa  fa-close"></i></a>
+				</div>
+			</div>
+	
+		</div>
+		<div id="myModal" class="modal fade" role="dialog">
+		</div>
+		
+	
+	
+	
+		<div id="quick-view-product" class="quickview-product" style="display:none;">
+			<div class="quickview-overlay fancybox-overlay fancybox-overlay-fixed"></div>
+			<div class="quick-view-product"></div>
+			<div id="quickview-modal" style="display:none;">
+				<div class="block-quickview primary_block row">
+	
+					<div class="product-left-column col-xs-12 col-sm-5 col-md-5 col-lg-5">
+						<div class="clearfix image-block">
+							<span class="view_full_size">
+								<a class="img-product" title=""
+									href="https://template-digiworld.mysapo.net/collections/all#">
+									<img id="product-featured-image-quickview"
+										class="img-responsive product-featured-image-quickview"
+										src="./images/logo.png" alt="quickview">
+								</a>
+							</span>
+							<div class="loading-imgquickview" style="display:none;"></div>
+						</div>
+						<div class="more-view-wrapper clearfix">
+							<div class="thumbs_quickview" id="thumbs_list_quickview">
+								<ul class="product-photo-thumbs quickview-more-views-owlslider" id="thumblist_quickview">
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="product-center-column product-info product-item col-xs-5 col-sm-7 col-md-7 col-lg-7">
+						<div class="head-qv">
+							<h3 class="qwp-name">abc</h3>
+							<div class="vend-qv">
+								<div class="left_vend">
+									<span class="vendor_"></span>
+									<span class="line">|</span>
+									Tình trạng: <span class="soluong"></span>
+								</div>
+	
+							</div>
+						</div>
+						<div class="quickview-info">
+	
+							<div class="reviews_qv">
+								<div class="bizweb-product-reviews-badge" data-id=""></div>
+							</div>
+	
+							<span class="prices">
+								<span class="price"></span>
+								<del class="old-price"></del>
+							</span>
+						</div>
+						<div class="product-description">
+							<div class="rte text2line">
+	
+							</div>
+	
+						</div>
+	
+						<form action="https://template-digiworld.mysapo.net/cart/add" method="post"
+							enctype="multipart/form-data" class="quick_option variants form-ajaxtocart">
+							<span class="price-product-detail hidden" style="opacity: 0;">
+								<span class=""></span>
+							</span>
+							<select name="variantId" class="hidden" style="display:none"></select>
+							<div class="clearfix"></div>
+							<div class="quantity_wanted_p">
+								<div class="input_qty_qv">
+									<a class="btn_num num_1 button button_qty"
+										>-</a>
+									<input type="text" id="quantity-detail" name="quantity" value="1"
+										>
+									<a class="btn_num num_2 button button_qty"
+										>+</a>
+								</div>
+	
+								<div class="button_actions">
+									<button type="submit"
+										class="btn btn-lg fix_add_to_cart  btn-cart button_cart_buy_enable add_to_cart btn_buy add_to_cart_detail ajax_addtocart"
+										title="Cho vào giỏ hàng">
+										<span class="btn-image">
+											<img src="./images/shopping_cart.png"
+												alt="shopping-cart">
+										</span>
+										<span class="btn-content">Cho vào giỏ hàng</span>
+									</button>
+								</div>
+							</div>
+							<div class="total-price" style="display:none">0₫</div>
+	
+						</form>
+	
+	
+					</div>
+	
+				</div>
+				<a title="Close" class="quickview-close close-window" href="javascript:;"><i class="fa   fa-times"></i></a>
+			</div>
+		</div>
+	 
+	
+	
+		<!-- Main JS -->
+	
+	
+		<!-- Product detail JS,CSS -->
+	
+	
+		<link rel="preconnect" href="https://fonts.googleapis.com/">
+		<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+		<link href="/customerAssets/css2" rel="stylesheet">
+	</main>
+</body>
+
+</html>
